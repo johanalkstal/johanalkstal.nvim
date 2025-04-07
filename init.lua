@@ -72,7 +72,7 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
--- [[ Basic Keymaps ]]
+-- [[ Keymaps ]]
 --  See `:help vim.keymap.set()`
 
 -- Clear highlights on search when pressing <Esc> in normal mode
@@ -106,7 +106,12 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
 -- Keybind to open the Oil file explorer more conveniently and in float mode.
-vim.keymap.set('n', '<leader>e', ':Oil --float . <CR>', { desc = '[E]dit the current directory' })
+vim.keymap.set('n', '<leader>e', ':Oil --float . <CR>', { desc = '[e]dit the current directory' })
+
+-- Buffer traversal.
+vim.keymap.set('n', '<leader>n', ':bn<CR>', { desc = 'Go to [n]ext buffer' })
+vim.keymap.set('n', '<leader>p', ':bp<CR>', { desc = 'Go to [p]revious buffer' })
+vim.keymap.set('n', '<leader>x', ':bd<CR>', { desc = 'Close the current buffer' })
 
 -- [[ User Commands ]]
 
