@@ -106,7 +106,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
 -- Keybind to open the Oil file explorer more conveniently and in float mode.
-vim.keymap.set('n', '<leader>e', ':Oil --float . <CR>', { desc = '[e]dit the current directory' })
+vim.keymap.set('n', '<leader>e', ':Oil --float <CR>', { desc = '[e]dit the current directory' })
 
 -- Buffer traversal.
 vim.keymap.set('n', '<leader>n', ':bn<CR>', { desc = 'Go to [n]ext buffer' })
