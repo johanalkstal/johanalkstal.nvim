@@ -127,6 +127,12 @@ vim.keymap.set('n', '<leader>lx', function()
   require('persistence').stop()
 end, { desc = 'Stop Persistence. Session will not be saved on e[x]it' })
 
+-- Yank file name of the current buffer.
+vim.keymap.set('n', '<leader>yf', function()
+  vim.fn.setreg('+', vim.fn.expand '%:t')
+  print('Yanked file name: ' .. vim.fn.expand '%:t')
+end, { desc = '[Y]ank [f]ile name of current buffer' })
+
 -- [[ User Commands ]]
 
 -- Open the init.lua file.
