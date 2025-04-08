@@ -171,6 +171,11 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 require('lazy').setup({
+  { -- Shows diagnostics in the top right corner when cursor is over the issue.
+    'dgagn/diagflow.nvim',
+    event = 'LspAttach',
+    opts = {},
+  },
   {
     'folke/persistence.nvim',
     event = 'BufReadPre', -- this will only start session saving when an actual file was opened
@@ -876,7 +881,7 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       require('rose-pine').setup {
-        variant = 'moon', -- auto, main, moon, or dawn
+        variant = 'dawn', -- auto, main, moon, or dawn
       }
       -- Uncomment below if you want this one instead:
       vim.cmd.colorscheme 'rose-pine'
