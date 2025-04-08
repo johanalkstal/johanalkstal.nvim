@@ -177,6 +177,37 @@ vim.opt.rtp:prepend(lazypath)
 --    :Lazy update
 --
 require('lazy').setup({
+  { -- Dashboard.
+    'folke/snacks.nvim',
+    ---@type snacks.Config
+    opts = {
+      ---@class snacks.dashboard.Config
+      ---@field enabled? boolean
+      ---@field sections snacks.dashboard.Section
+      ---@field formats table<string, snacks.dashboard.Text|fun(item:snacks.dashboard.Item, ctx:snacks.dashboard.Format.ctx):snacks.dashboard.Text>
+      dashboard = {
+        preset = {
+          header = [[
+                                                         
+                                                         
+ █████╗ ██╗     ██╗  ██╗███████╗████████╗ █████╗ ██╗     
+██╔══██╗██║     ██║ ██╔╝██╔════╝╚══██╔══╝██╔══██╗██║     
+███████║██║     █████╔╝ ███████╗   ██║   ███████║██║     
+██╔══██║██║     ██╔═██╗ ╚════██║   ██║   ██╔══██║██║     
+██║  ██║███████╗██║  ██╗███████║   ██║   ██║  ██║███████╗
+╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝]],
+          pick = 'telescope.nvim',
+        },
+        sections = {
+          { section = 'header' },
+          { icon = ' ', title = 'Keymaps', section = 'keys', indent = 2, padding = 1 },
+          { icon = ' ', title = 'Recent Files', section = 'recent_files', indent = 2, padding = 1 },
+          { icon = ' ', title = 'Projects', section = 'projects', indent = 2, padding = 1 },
+          { section = 'startup' },
+        },
+      },
+    },
+  },
   { -- Shows diagnostics in the top right corner when cursor is over the issue.
     'dgagn/diagflow.nvim',
     event = 'LspAttach',
@@ -887,7 +918,7 @@ require('lazy').setup({
     priority = 1000,
     config = function()
       require('rose-pine').setup {
-        variant = 'dawn', -- auto, main, moon, or dawn
+        variant = 'moon', -- auto, main, moon, or dawn
       }
       -- Uncomment below if you want this one instead:
       vim.cmd.colorscheme 'rose-pine'
