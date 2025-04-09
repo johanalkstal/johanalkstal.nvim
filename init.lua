@@ -113,6 +113,9 @@ vim.keymap.set('n', '<leader>n', ':bn<CR>', { desc = 'Go to [n]ext buffer' })
 vim.keymap.set('n', '<leader>p', ':bp<CR>', { desc = 'Go to [p]revious buffer' })
 vim.keymap.set('n', '<leader>x', ':bd<CR>', { desc = 'Close the current buffer' })
 
+-- Esc to exit Terminal-Job Mode.
+vim.keymap.set('t', '<Esc>', [[<C-\><C-n>]], { noremap = true })
+
 -- Persistence
 vim.keymap.set('n', '<leader>ls', function()
   require('persistence').load()
