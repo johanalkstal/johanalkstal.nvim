@@ -911,6 +911,34 @@ require('lazy').setup({
       require('themery').setup {
         themes = {
           {
+            name = 'Carbonfox',
+            colorscheme = 'carbonfox',
+            before = [[
+            vim.opt.background = 'dark'
+            ]],
+          },
+          {
+            name = 'Dawnfox',
+            colorscheme = 'dawnfox',
+            before = [[
+            vim.opt.background = 'light'
+            ]],
+          },
+          {
+            name = 'Dayfox',
+            colorscheme = 'dayfox',
+            before = [[
+            vim.opt.background = 'light'
+            ]],
+          },
+          {
+            name = 'Duskfox',
+            colorscheme = 'duskfox',
+            before = [[
+            vim.opt.background = 'dark'
+            ]],
+          },
+          {
             name = 'Modus Dark',
             colorscheme = 'modus',
             before = [[
@@ -922,6 +950,27 @@ require('lazy').setup({
             colorscheme = 'modus',
             before = [[
             vim.opt.background = 'light'
+            ]],
+          },
+          {
+            name = 'Nightfox',
+            colorscheme = 'nightfox',
+            before = [[
+            vim.opt.background = 'dark'
+            ]],
+          },
+          {
+            name = 'Nordfox',
+            colorscheme = 'nordfox',
+            before = [[
+            vim.opt.background = 'dark'
+            ]],
+          },
+          {
+            name = 'Terafox',
+            colorscheme = 'terafox',
+            before = [[
+            vim.opt.background = 'dark'
             ]],
           },
           {
@@ -941,6 +990,10 @@ require('lazy').setup({
         },
       }
     end,
+  },
+  {
+    'EdenEast/nightfox.nvim',
+    name = 'nightfox',
   },
   {
     'miikanissi/modus-themes.nvim',
