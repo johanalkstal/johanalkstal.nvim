@@ -905,47 +905,60 @@ require('lazy').setup({
   -- [[ Color Schemes ]]
   -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
   {
-    'catppuccin/nvim',
-    name = 'catppuccin',
-    priority = 1000, -- Make sure it loads first
+    'zaldih/themery.nvim',
+    lazy = false,
     config = function()
-      require('catppuccin').setup {
-        flavour = 'latte', -- latte, frappe, macchiato, mocha
+      require('themery').setup {
+        themes = {
+          {
+            name = 'Modus Dark',
+            colorscheme = 'modus',
+            before = [[
+          vim.opt.background = 'dark'
+          ]],
+          },
+          {
+            name = 'Modus Light',
+            colorscheme = 'modus',
+            before = [[
+            vim.opt.background = 'light'
+            ]],
+          },
+          {
+            name = 'Tokyo Night - Day',
+            colorscheme = 'tokyonight-day',
+            before = [[
+          vim.opt.background = 'light'
+          ]],
+          },
+          {
+            name = 'Tokyo Night - Moon',
+            colorscheme = 'tokyonight-moon',
+            before = [[
+          vim.opt.background = 'dark'
+          ]],
+          },
+        },
       }
-      -- vim.cmd.colorscheme 'catppuccin'
     end,
   },
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    'miikanissi/modus-themes.nvim',
+    name = 'modus',
     priority = 1000,
-    config = function()
-      require('rose-pine').setup {
-        variant = 'moon', -- auto, main, moon, or dawn
-      }
-      -- Uncomment below if you want this one instead:
-      vim.cmd.colorscheme 'rose-pine'
-    end,
   },
   {
     'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
-    config = function()
-      ---@diagnostic disable-next-line: missing-fields
-      require('tokyonight').setup {
-        styles = {
-          comments = { italic = false }, -- Disable italics in comments
-        },
-      }
-
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-      -- Load the colorscheme here.
-      -- vim.cmd.colorscheme 'tokyonight-day'
-    end,
+    name = 'tokyonight',
+    lazy = false,
+    priority = 1000,
   },
-  -- Highlight todo, notes, etc in comments
-  { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+  { -- Highlight todo, notes, etc in comments
+    'folke/todo-comments.nvim',
+    event = 'VimEnter',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    opts = { signs = false },
+  },
   { -- Collection of various small independent plugins/modules
     'echasnovski/mini.nvim',
     config = function()
