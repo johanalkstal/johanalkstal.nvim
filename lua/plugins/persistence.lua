@@ -1,15 +1,15 @@
 -- Saves your session so you can pick up where you left next time.
 
-vim.keymap.set('n', '<leader>ls', function()
+vim.keymap.set('n', '<leader>pd', function()
   require('persistence').load()
-end, { desc = '[L]oad [s]ession for the current directory' })
-vim.keymap.set('n', '<leader>lS', function()
+end, { desc = 'Load session for the current [d]irectory' })
+vim.keymap.set('n', '<leader>ps', function()
   require('persistence').select()
-end, { desc = '[S]elect session to [l]oad' })
-vim.keymap.set('n', '<leader>ll', function()
+end, { desc = '[S]elect session to load' })
+vim.keymap.set('n', '<leader>pl', function()
   require('persistence').load { last = true }
-end, { desc = '[L]oad [l]ast session' })
-vim.keymap.set('n', '<leader>lx', function()
+end, { desc = 'Load [l]ast session' })
+vim.keymap.set('n', '<leader>px', function()
   require('persistence').stop()
 end, { desc = 'Stop Persistence. Session will not be saved on e[x]it' })
 
