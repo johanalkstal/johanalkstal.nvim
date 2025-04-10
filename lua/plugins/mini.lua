@@ -17,6 +17,12 @@ return {
     -- - sr)'  - [S]urround [R]eplace [)] [']
     require('mini.surround').setup()
 
+    -- Move selections up/down.
+    require('mini.move').setup()
+
+    -- Add/Remove pairing characters automatically ([{""}]).
+    require('mini.pairs').setup()
+
     -- Simple and easy statusline.
     --  You could remove this setup call if you don't like it,
     --  and try some other statusline plugin
