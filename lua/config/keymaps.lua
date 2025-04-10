@@ -33,6 +33,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 vim.keymap.set('n', '<leader>n', ':bn<CR>', { desc = 'Go to [n]ext buffer' })
 vim.keymap.set('n', '<leader>p', ':bp<CR>', { desc = 'Go to [p]revious buffer' })
 vim.keymap.set('n', '<leader>x', ':bd<CR>', { desc = 'Close the current buffer' })
+vim.keymap.set('n', '<leader>b', ':b#<CR>', { desc = 'Go to last active [b]uffer' })
 
 -- Yank file name of the current buffer.
 vim.keymap.set('n', '<leader>yf', function()
