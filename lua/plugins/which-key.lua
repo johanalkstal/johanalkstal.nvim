@@ -47,7 +47,6 @@ return {
     spec = {
       { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
       { '<leader>d', group = '[D]ocument' },
-      { '<leader>l', group = '[L]SP' },
       { '<leader>p', group = '[P]ersistence' },
       { '<leader>r', group = '[R]ename' },
       { '<leader>s', group = '[S]earch' },
