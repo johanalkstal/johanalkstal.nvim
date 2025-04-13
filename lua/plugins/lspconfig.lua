@@ -15,25 +15,27 @@ return {
     -- Main LSP Configuration
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for Neovim
+      -- Mason automatically installs LSP servers for you.
       -- Mason must be loaded before its dependents so we need to set it up here.
-      -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
       { 'williamboman/mason.nvim', opts = {} },
+      -- Reads which LSPs you've installed with Mason and automatically configues those with nvim-lspconfig.
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      -- Useful status updates for LSP.
+      -- Show LSP status messages in the bottom right corner.
       { 'j-hui/fidget.nvim', opts = {} },
 
-      -- Allows extra capabilities provided by nvim-cmp
+      -- Allows extra capabilities provided by nvim-cmp.
       'hrsh7th/cmp-nvim-lsp',
     },
     config = function()
       --  This function gets run when an LSP attaches to a particular buffer.
       --    That is to say, every time a new file is opened that is associated with
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
-      --    function will be executed to configure the current buffer
+      --    function will be executed to configure the current buffer.
       vim.api.nvim_create_autocmd('LspAttach', {
+        -- Groups helps manage these LSP-related autocommands separately from other autocommands you might have.
+        -- Without grouping, if you sourced your config file multiple times, you'd end up with duplicate autocommands that would all trigger on the same event.
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
           local map = function(keys, func, desc, mode)
