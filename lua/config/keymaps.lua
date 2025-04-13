@@ -15,30 +15,6 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
---  See `:help wincmd` for a list of all window commands
-vim.keymap.set('n', '<leader>ws', '<C-w><C-s>', { desc = 'Split window' })
-vim.keymap.set('n', '<leader>wv', '<C-w><C-v>', { desc = 'Split window vertically' })
-vim.keymap.set('n', '<leader>wh', '<C-w><C-h>', { desc = 'Move focus to the left window' })
-vim.keymap.set('n', '<leader>wl', '<C-w><C-l>', { desc = 'Move focus to the right window' })
-vim.keymap.set('n', '<leader>wj', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
-vim.keymap.set('n', '<leader>wk', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
-vim.keymap.set('n', '<leader>wq', '<C-w><C-q>', { desc = 'Quit window' })
-vim.keymap.set('n', '<leader>w+', '<C-w><C-+>', { desc = 'Increase window height' })
-vim.keymap.set('n', '<leader>w-', '<C-w><C-->', { desc = 'Decrease window height' })
-vim.keymap.set('n', '<leader>w>', '<C-w><C->>', { desc = 'Increase window width' })
-vim.keymap.set('n', '<A-S-.>', '<C-w>5>', { desc = 'Increase window width x 5' })
-vim.keymap.set('n', '<leader>w<', '<C-w><C-<>', { desc = 'Decrease window width' })
-vim.keymap.set('n', '<A-S-,>', '<C-w>5<', { desc = 'Decrease window width x 5' })
-vim.keymap.set('n', '<leader>w=', '<C-w><C-<=', { desc = 'Equally high and wide' })
-
--- NOTE: Some terminals have coliding keymaps or are not able to send distinct keycodes
--- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
--- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
--- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
--- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
-
 -- Buffer traversal.
 vim.keymap.set('n', '<leader>x', ':bd<CR>', { desc = 'Close the current buffer' })
 vim.keymap.set('n', '<leader>b', ':b#<CR>', { desc = 'Go to last active [b]uffer' })
