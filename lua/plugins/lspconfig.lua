@@ -142,7 +142,7 @@ return {
           },
         } or {},
         -- This can either be virtual_lines or virtual_text.
-        virtual_lines = {
+        virtual_text = {
           source = 'if_many',
           spacing = 2,
           format = function(diagnostic)
