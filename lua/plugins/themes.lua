@@ -36,6 +36,20 @@ return {
             ]],
           },
           {
+            name = 'Melange Dark',
+            colorscheme = 'melange',
+            before = [[
+            vim.opt.background = 'dark'
+            ]],
+          },
+          {
+            name = 'Melange Light',
+            colorscheme = 'melange',
+            before = [[
+            vim.opt.background = 'light'
+            ]],
+          },
+          {
             name = 'Modus Dark',
             colorscheme = 'modus',
             before = [[
@@ -61,6 +75,20 @@ return {
             colorscheme = 'nordfox',
             before = [[
             vim.opt.background = 'dark'
+            ]],
+          },
+          {
+            name = 'One Dark Pro',
+            colorscheme = 'onedark',
+            before = [[
+            vim.opt.background = 'dark'
+            ]],
+          },
+          {
+            name = 'One Dark Pro Light',
+            colorscheme = 'onelight',
+            before = [[
+            vim.opt.background = 'light'
             ]],
           },
           {
@@ -101,6 +129,14 @@ return {
     'folke/tokyonight.nvim',
     name = 'tokyonight',
     lazy = false,
+    priority = 1000,
+  },
+  {
+    'olimorris/onedarkpro.nvim',
+    priority = 1000,
+  },
+  {
+    'savq/melange-nvim',
     priority = 1000,
   },
 }
