@@ -24,3 +24,6 @@ vim.keymap.set('n', '<leader>yf', function()
   vim.fn.setreg('+', vim.fn.expand '%:t')
   print('Yanked file name: ' .. vim.fn.expand '%:t')
 end, { desc = '[Y]ank [f]ile name of current buffer' })
+
+-- Open my custom floating command line.
+vim.keymap.set('n', '<leader>;', ':FloatCmd<CR>', { desc = 'Open a floating command line' })
