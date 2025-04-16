@@ -92,6 +92,41 @@ return {
             ]],
           },
           {
+            name = 'One Nord Dark',
+            colorscheme = 'onenord',
+            before = [[
+            vim.opt.background = 'dark'
+            ]],
+          },
+          {
+            name = 'One Nord Light',
+            colorscheme = 'onenord',
+            before = [[
+            vim.opt.background = 'light'
+            ]],
+          },
+          {
+            name = 'Oxocarbon Dark',
+            colorscheme = 'oxocarbon',
+            before = [[
+            vim.opt.background = 'dark'
+            ]],
+          },
+          {
+            name = 'Oxocarbon Light',
+            colorscheme = 'oxocarbon',
+            before = [[
+            vim.opt.background = 'light'
+            ]],
+          },
+          {
+            name = 'Poimandres',
+            colorscheme = 'poimandres',
+            before = [[
+            vim.opt.background = 'dark'
+            ]],
+          },
+          {
             name = 'Terafox',
             colorscheme = 'terafox',
             before = [[
@@ -138,5 +173,14 @@ return {
   {
     'savq/melange-nvim',
     priority = 1000,
+  },
+  {
+    'nyoom-engineering/oxocarbon.nvim',
+  },
+  {
+    'rmehri01/onenord.nvim',
+  },
+  {
+    'olivercederborg/poimandres.nvim',
   },
 }
