@@ -35,15 +35,15 @@ return {
       prettier = {
         -- Require a config file for prettier to run.
         require_cwd = true,
-      }
+      },
     },
 
     formatters_by_ft = {
       lua = { 'stylua' },
-      javascript = { 'prettier', 'eslint_d', stop_after_first = true },
-      typescript = { 'prettier', 'eslint_d', stop_after_first = true },
-      javascriptreact = { 'prettier', 'eslint_d', stop_after_first = true },
-      typescriptreact = { 'prettier', 'eslint_d', stop_after_first = true },
+      javascript = { 'biome', 'prettier', 'eslint_d', stop_after_first = true },
+      typescript = { 'biome', 'prettier', 'eslint_d', stop_after_first = true },
+      javascriptreact = { 'biome', 'prettier', 'eslint_d', stop_after_first = true },
+      typescriptreact = { 'biome', 'prettier', 'eslint_d', stop_after_first = true },
       vue = { 'prettier', 'eslint_d', stop_after_first = true },
       html = { 'prettier', 'eslint_d', stop_after_first = true },
       css = { 'prettier', 'eslint_d', stop_after_first = true },
