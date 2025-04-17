@@ -15,6 +15,7 @@ return {
   },
   opts = {
     notify_on_error = false,
+
     format_on_save = function(bufnr)
       -- Disable "format_on_save lsp_fallback" for languages that don't
       -- have a well standardized coding style. You can add additional
@@ -29,16 +30,24 @@ return {
         }
       end
     end,
+
+    formatters = {
+      prettier = {
+        -- Require a config file for prettier to run.
+        require_cwd = true,
+      }
+    },
+
     formatters_by_ft = {
       lua = { 'stylua' },
-      javascript = { 'prettier', stop_after_first = true },
-      typescript = { 'prettier', stop_after_first = true },
-      javascriptreact = { 'prettier', stop_after_first = true },
-      typescriptreact = { 'prettier', stop_after_first = true },
-      vue = { 'prettier', stop_after_first = true },
-      html = { 'prettier', stop_after_first = true },
-      css = { 'prettier', stop_after_first = true },
-      json = { 'prettier', stop_after_first = true },
+      javascript = { 'prettier', 'eslint_d', stop_after_first = true },
+      typescript = { 'prettier', 'eslint_d', stop_after_first = true },
+      javascriptreact = { 'prettier', 'eslint_d', stop_after_first = true },
+      typescriptreact = { 'prettier', 'eslint_d', stop_after_first = true },
+      vue = { 'prettier', 'eslint_d', stop_after_first = true },
+      html = { 'prettier', 'eslint_d', stop_after_first = true },
+      css = { 'prettier', 'eslint_d', stop_after_first = true },
+      json = { 'prettier', 'eslint_d', stop_after_first = true },
       yaml = { 'prettier', stop_after_first = true },
     },
   },
