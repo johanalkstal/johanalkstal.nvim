@@ -16,8 +16,10 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Buffer traversal.
-vim.keymap.set('n', '<leader>x', ':bd<CR>', { desc = 'Close the current buffer' })
-vim.keymap.set('n', '<leader>b', ':b#<CR>', { desc = 'Go to last active [b]uffer' })
+vim.keymap.set('n', '<leader>ba', ':b#<CR>', { desc = 'Go to last [a]ctive [b]uffer' })
+vim.keymap.set('n', '<leader>bc', ':bd<CR>', { desc = '[C]lose the current [b]uffer' })
+vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Go to [n]ext [b]uffer' })
+vim.keymap.set('n', '<leader>bp', ':bprev<CR>', { desc = 'Go to [p]revious [b]uffer' })
 
 -- Yank file name of the current buffer.
 vim.keymap.set('n', '<leader>yf', function()
