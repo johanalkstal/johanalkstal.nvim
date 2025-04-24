@@ -57,7 +57,7 @@ vim.opt.scrolloff = 10
 vim.opt.confirm = true
 
 -- Show the file name and if it's been modified at the top of a window.
-vim.opt.winbar = '%=%m\\ %f'
+-- vim.opt.winbar = '%=%m\\ %f'
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.
