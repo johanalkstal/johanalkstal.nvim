@@ -43,19 +43,23 @@ return {
       },
     },
 
+    preset = 'modern',
+
     -- Document existing key chains
     spec = {
       { '<leader>a', group = '[A]vante' },
       { '<leader>b', group = '[B]uffer' },
       { '<leader>c', group = '[C]ode', mode = { 'n', 'x' } },
       { '<leader>d', group = '[D]ocument' },
+      { '<leader>g', group = '[G]o to' },
+      { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
       { '<leader>p', group = '[P]ersistence' },
+      { '<leader>q', group = 'Open diagnostic [Q]uickfix list' },
       { '<leader>r', group = '[R]ename' },
       { '<leader>s', group = '[S]earch' },
+      { '<leader>t', group = '[T]oggle' },
       { '<leader>w', group = '[W]indow' },
       { '<leader>y', group = '[Y]ank' },
-      { '<leader>t', group = '[T]oggle' },
-      { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
     },
   },
 }

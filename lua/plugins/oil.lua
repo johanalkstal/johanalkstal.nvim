@@ -1,7 +1,7 @@
 -- File explorer that works like a buffer.
 
 -- Keybind to open the Oil file explorer more conveniently and in float mode.
-vim.keymap.set('n', '<leader>e', ':Oil --float <CR>', { desc = '[e]dit the current directory' })
+vim.keymap.set('n', '<leader>e', ':Oil --float <CR>', { desc = 'Open File [E]xplorer' })
 
 return {
   'stevearc/oil.nvim',
