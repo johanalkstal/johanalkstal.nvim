@@ -4,6 +4,18 @@
 -- views can only be fully collapsed with the global statusline
 vim.opt.laststatus = 3
 
+function is_windows()
+  return vim.fn.has 'win32' == 1 or vim.fn.has 'win64' == 1
+end
+
+function build_command()
+  if is_windows() then
+    return 'powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false'
+  else
+    return 'make'
+  end
+end
+
 return {
   'yetone/avante.nvim',
   event = 'VeryLazy',
@@ -73,9 +85,8 @@ return {
       },
     },
   },
-  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-  build = 'make',
-  -- build = "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false" -- for windows
+  -- if you want to build from source then do `make BUILD_FROM_SOURCE=true` for MacOS or change BuildFromSource for Windows.
+  build = build_command(),
   dependencies = {
     'nvim-treesitter/nvim-treesitter',
     'stevearc/dressing.nvim',
