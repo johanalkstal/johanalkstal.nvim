@@ -5,7 +5,7 @@
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
 -- Diagnostic keymaps
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic Quickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -16,13 +16,13 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- Buffer traversal.
-vim.keymap.set('n', '<leader>ba', ':b#<CR>', { desc = 'Go to last [a]ctive [b]uffer' })
-vim.keymap.set('n', '<leader>bc', ':bd<CR>', { desc = '[C]lose the current [b]uffer' })
-vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Go to [n]ext [b]uffer' })
-vim.keymap.set('n', '<leader>bp', ':bprev<CR>', { desc = 'Go to [p]revious [b]uffer' })
+vim.keymap.set('n', '<leader>ba', ':b#<CR>', { desc = 'Go to last active buffer' })
+vim.keymap.set('n', '<leader>bc', ':bd<CR>', { desc = 'Close the current buffer' })
+vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Go to next buffer' })
+vim.keymap.set('n', '<leader>bp', ':bprev<CR>', { desc = 'Go to previous buffer' })
 
 -- Yank file name of the current buffer.
 vim.keymap.set('n', '<leader>yf', function()
   vim.fn.setreg('+', vim.fn.expand '%:t')
   print('Yanked file name: ' .. vim.fn.expand '%:t')
-end, { desc = '[Y]ank [f]ile name of current buffer' })
+end, { desc = 'Yank file name of current buffer' })
