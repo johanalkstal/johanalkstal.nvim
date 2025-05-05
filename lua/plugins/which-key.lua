@@ -43,14 +43,14 @@ return {
       },
     },
 
-    preset = 'modern',
+    preset = 'helix',
 
     -- Document existing key chains
     spec = {
       { '<leader>a', group = 'Avante', icon = { icon = '󰧑' } },
       { '<leader>b', group = 'Buffer', icon = { icon = '󰧮' } },
       { '<leader>d', group = 'Document', icon = { icon = '󰧮' } },
-      { '<leader>g', group = 'Go to', icon = { icon = '' } },
+      { '<leader>g', group = 'Go To', icon = { icon = '' } },
       { '<leader>h', group = 'Git Hunk', icon = { icon = '' }, mode = { 'n', 'v' } },
       { '<leader>p', group = 'Persistence', icon = { icon = '' } },
       { '<leader>q', group = 'Open diagnostic Quickfix list' },
