@@ -76,6 +76,10 @@ return {
           -- or a suggestion from your LSP for this to activate.
           map('<leader>gc', vim.lsp.buf.code_action, 'Code Action', { 'n', 'x' })
 
+          map('<leader>gh', vim.lsp.buf.signature_help, 'Signature Help')
+
+          map('<leader>gq', vim.diagnostic.open_float, 'Diagnosic')
+
           -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
           ---@param client vim.lsp.Client
           ---@param method vim.lsp.protocol.Method
