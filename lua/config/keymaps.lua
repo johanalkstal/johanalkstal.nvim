@@ -26,3 +26,7 @@ vim.keymap.set('n', '<leader>yf', function()
   vim.fn.setreg('+', vim.fn.expand '%:t')
   print('Yanked file name: ' .. vim.fn.expand '%:t')
 end, { desc = 'Yank file name of current buffer' })
+
+-- Always center the buffer when moving with Ctrl-D Ctrl-U.
+vim.keymap.set('n', '<C-d>', '<C-d>zz')
+vim.keymap.set('n', '<C-u>', '<C-u>zz')
