@@ -12,7 +12,10 @@ vim.g.have_nerd_font = true
 -- Make line numbers default
 vim.opt.number = true
 
--- Set the size of tabs.
+-- Use relative line numbers
+vim.wo.relativenumber = true
+
+-- Set the size of tabs
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 
