@@ -1,3 +1,5 @@
+local vue_ls = vim.fn.expand('$MASON/packages/vue-language-server/node_modules/@vue/language-server')
+
 return {
   cmd = { 'typescript-language-server', '--stdio' },
   root_markers = { 'tsconfig.json', 'package.json' },
@@ -15,8 +17,8 @@ return {
     plugins = {
       {
         name = '@vue/typescript-plugin',
-        location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
-        languages = { 'javascript', 'typescript', 'vue' },
+        location = vue_ls,
+        languages = { 'vue' },
       },
     },
   },

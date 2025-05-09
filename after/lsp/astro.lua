@@ -1,14 +1,12 @@
 return {
-  cmd = { 'vue-language-server', '--stdio' },
+  cmd = { 'astro-ls', '--stdio' },
   root_markers = { 'package.json' },
   filetypes = {
-    'vue',
+    'astro',
   },
   init_options = {
     hostInfo = 'neovim',
-    typescript = {
-      tsdk = '',
-    },
+    typescript = {},
   },
   before_init = function(_, config)
     if config.init_options and config.init_options.typescript and config.init_options.typescript.tsdk == '' then
