@@ -7,12 +7,12 @@ return {
     sections = {
       lualine_a = { 'mode' },
       lualine_b = { 'branch', 'diff' },
-      lualine_c = { 'diagnostics' },
       lualine_y = { 'lsp_status' },
       lualine_z = { 'location' },
     },
     winbar = {
       lualine_a = { { 'filename', path = 1 } },
+      lualine_b = { 'diagnostics' },
     },
   },
 }
