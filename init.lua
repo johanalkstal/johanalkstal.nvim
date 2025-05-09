@@ -2,6 +2,7 @@ require 'config.options'
 require 'config.keymaps'
 require 'config.usercommands'
 require 'config.autocommands'
+require 'config.lsp'
 
 -- Install `lazy.nvim` plugin manager
 -- See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info

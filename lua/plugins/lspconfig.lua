@@ -20,7 +20,19 @@ return {
       -- Mason must be loaded before its dependents so we need to set it up here.
       { 'williamboman/mason.nvim', opts = {} },
       -- Reads which LSPs you've installed with Mason and automatically configues those with nvim-lspconfig.
-      'williamboman/mason-lspconfig.nvim',
+      {
+        'williamboman/mason-lspconfig.nvim',
+        opts = {
+          automatic_enable = {
+            -- NOTE: Excluding LSPs that I configure using Neovim's LSP API from being enabled.
+            -- Only using Mason to install the LSPs.
+            exclude = {
+              'ts_ls',
+              'volar',
+            },
+          },
+        },
+      },
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
       -- Show LSP status messages in the bottom right corner.
@@ -193,67 +205,7 @@ return {
           end,
         },
         tailwindcss = {},
-        ts_ls = {
-          init_options = {
-            plugins = {
-              {
-                name = '@vue/typescript-plugin',
-                location = vim.fn.stdpath 'data' .. '/mason/packages/vue-language-server/node_modules/@vue/language-server',
-                languages = { 'javascript', 'typescript', 'vue' },
-              },
-            },
-            filetypes = {
-              'javascript',
-              'typescript',
-              'vue',
-            },
-          },
-          settings = {
-            typescript = {
-              inlayHints = {
-                includeInlayParameterNameHints = 'all',
-                includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-                includeInlayFunctionParameterTypeHints = true,
-                includeInlayVariableTypeHints = true,
-                includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-                includeInlayPropertyDeclarationTypeHints = true,
-                includeInlayFunctionLikeReturnTypeHints = true,
-                includeInlayEnumMemberValueHints = true,
-              },
-            },
-          },
-        },
         rust_analyzer = {},
-        volar = {
-          root_dir = require('lspconfig').util.root_pattern('vue.config.js', 'vue.config.ts', 'nuxt.config.js', 'nuxt.config.ts'),
-          init_options = {
-            vue = {
-              hybridMode = false,
-            },
-          },
-          settings = {
-            typescript = {
-              inlayHints = {
-                enumMemberValues = {
-                  enabled = true,
-                },
-                functionLikeReturnTypes = {
-                  enabled = true,
-                },
-                propertyDeclarationTypes = {
-                  enabled = true,
-                },
-                parameterTypes = {
-                  enabled = true,
-                  suppressWhenArgumentMatchesName = true,
-                },
-                variableTypes = {
-                  enabled = true,
-                },
-              },
-            },
-          },
-        },
         lua_ls = {
           -- cmd = { ... },
           -- filetypes = { ... },
