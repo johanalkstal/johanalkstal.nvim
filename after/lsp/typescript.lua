@@ -1,4 +1,4 @@
-local vue_ls = vim.fn.expand('$MASON/packages/vue-language-server/node_modules/@vue/language-server')
+local vue_ls = vim.fn.expand '$MASON/packages/vue-language-server/node_modules/@vue/language-server'
 
 return {
   cmd = { 'typescript-language-server', '--stdio' },
