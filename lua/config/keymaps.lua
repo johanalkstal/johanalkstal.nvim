@@ -20,6 +20,7 @@ vim.keymap.set('n', '<leader>ba', ':b#<CR>', { desc = 'Go to last active buffer'
 vim.keymap.set('n', '<leader>bc', ':bd<CR>', { desc = 'Close the current buffer' })
 vim.keymap.set('n', '<leader>bn', ':bnext<CR>', { desc = 'Go to next buffer' })
 vim.keymap.set('n', '<leader>bp', ':bprev<CR>', { desc = 'Go to previous buffer' })
+vim.keymap.set('n', '<leader>bx', ':%bd|e#<CR>', { desc = 'Close all buffers' })
 
 -- Yank file name of the current buffer.
 vim.keymap.set('n', '<leader>yf', function()
