@@ -3,7 +3,7 @@ return {
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   opts = {
     -- defaults to 'auto' if you want it to try and match with your theme automatically.
-    theme = 'onelight',
+    -- theme = 'onelight',
     sections = {
       lualine_a = { 'mode' },
       lualine_b = { 'branch', 'diff' },
