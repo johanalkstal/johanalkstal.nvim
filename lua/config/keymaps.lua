@@ -15,8 +15,8 @@ vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagn
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- Open File Explorer.
-vim.keymap.set('n', '<leader>e', ':lua MiniFiles.open()<CR>', { desc = 'Open File Explorer' })
+-- Open File Explorer in directory of current file.
+vim.keymap.set('n', '<leader>e', ':lua MiniFiles.open(vim.api.nvim_buf_get_name(0), false)<CR>', { desc = 'Open File Explorer' })
 
 -- Buffer traversal.
 vim.keymap.set('n', '<leader>ba', ':b#<CR>', { desc = 'Go to last active buffer' })
