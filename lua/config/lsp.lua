@@ -1,5 +1,5 @@
 -- Enable LSPs.
-vim.lsp.enable { 'astro', 'typescript' }
+vim.lsp.enable { 'astro', 'gleam', 'typescript' }
 
 vim.api.nvim_create_autocmd('LspAttach', {
   -- Groups helps manage these LSP-related autocommands separately from other autocommands you might have.
