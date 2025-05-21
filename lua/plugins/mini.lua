@@ -18,27 +18,63 @@ return {
     require('mini.surround').setup()
 
     -- Move selections up/down.
+    -- Default binds to the Modifier key and hjkl.
     require('mini.move').setup()
 
     -- Add/Remove pairing characters automatically ([{""}]).
     require('mini.pairs').setup()
 
-    -- Simple and easy statusline.
-    --  You could remove this setup call if you don't like it,
-    --  and try some other statusline plugin
-    -- local statusline = require 'mini.statusline'
-    -- set use_icons to true if you have a Nerd Font
-    -- statusline.setup { use_icons = vim.g.have_nerd_font }
+    -- Which key hints.
+    local miniclue = require 'mini.clue'
+    miniclue.setup {
+      triggers = {
+        -- Leader triggers
+        { mode = 'n', keys = '<Leader>' },
+        { mode = 'x', keys = '<Leader>' },
 
-    -- You can configure sections in the statusline by overriding their
-    -- default behavior. For example, here we set the section for
-    -- cursor location to LINE:COLUMN
-    ---@diagnostic disable-next-line: duplicate-set-field
-    -- statusline.section_location = function()
-    --   return '%2l:%-2v'
-    -- end
+        -- Built-in completion
+        { mode = 'i', keys = '<C-x>' },
 
-    -- ... and there is more!
-    --  Check out: https://github.com/echasnovski/mini.nvim
+        -- `g` key
+        { mode = 'n', keys = 'g' },
+        { mode = 'x', keys = 'g' },
+
+        -- Marks
+        { mode = 'n', keys = "'" },
+        { mode = 'n', keys = '`' },
+        { mode = 'x', keys = "'" },
+        { mode = 'x', keys = '`' },
+
+        -- Registers
+        { mode = 'n', keys = '"' },
+        { mode = 'x', keys = '"' },
+        { mode = 'i', keys = '<C-r>' },
+        { mode = 'c', keys = '<C-r>' },
+
+        -- Window commands
+        { mode = 'n', keys = '<C-w>' },
+
+        -- `z` key
+        { mode = 'n', keys = 'z' },
+        { mode = 'x', keys = 'z' },
+      },
+
+      clues = {
+        -- Enhance this by adding descriptions for <Leader> mapping groups
+        miniclue.gen_clues.builtin_completion(),
+        miniclue.gen_clues.g(),
+        miniclue.gen_clues.marks(),
+        miniclue.gen_clues.registers(),
+        miniclue.gen_clues.windows(),
+        miniclue.gen_clues.z(),
+      },
+
+      window = {
+        delay = 0,
+        config = {
+          width = 'auto',
+        },
+      },
+    }
   end,
 }
