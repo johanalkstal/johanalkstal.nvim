@@ -24,6 +24,9 @@ return {
     -- Add/Remove pairing characters automatically ([{""}]).
     require('mini.pairs').setup()
 
+    -- Jump to place in file based on characters.
+    require('mini.jump2d').setup()
+
     -- File explorer.
     require('mini.files').setup {
       mappings = {
